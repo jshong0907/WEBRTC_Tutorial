@@ -4,15 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <title>WebRtc tutorial</title>
+    <script src="/socket.io/socket.io.js"></script>
+
     <script>
         const ROOM_ID = "<%= roomId %>"
     </script>
 </head>
 
 <body>
-    <div id='video-div'>
-        <video id="localVideo" autoplay width="480px"></video>
+    <div id=vidio-main>
+        <div id='video-div'>
+            <video id="localVideo" autoplay width="480px"></video>
+        </div>
     </div>
+
+    <div id = 'main'>
+        <div id='chat'>
+
+        </div>
+        <div>
+            <input type="text" id="test" placeholder="메시지를 입력해주세요..">
+            <button onclick="send()">전송</button>
+          </div>
+    </div>
+    
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
